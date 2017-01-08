@@ -13,7 +13,7 @@ def BlueFilter(frame):
 
 def WhiteFilter(frame): 
     hsl_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)    
-    boundary = [np.array([200, 0, 60]), np.array([220, 255, 255])]
+    boundary = [np.array([195, 0, 100]), np.array([220, 255, 220])]
     mask = cv2.inRange(frame, boundary[0], boundary[1]) 
     res = cv2.bitwise_and(hsl_frame, hsl_frame, mask = mask) 
     output = cv2.cvtColor(res, cv2.COLOR_HSV2BGR) 
